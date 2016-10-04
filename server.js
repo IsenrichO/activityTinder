@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+//
 app.all('/', (req, res) => {
   res.send(`
     <!DOCTYPE html >
@@ -12,11 +13,13 @@ app.all('/', (req, res) => {
       <body>
         <div>
           <h1> This is for Activity Tinder</h1>
+          <div ui-view></div>
+          <script src="bundle.js"></script>
         </div>
       </body>
     </html>
     `)
-})
+});
 
 
 app.listen(PORT, () => {
